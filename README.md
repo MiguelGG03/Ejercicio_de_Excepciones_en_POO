@@ -17,5 +17,25 @@ podría detectar como válido lo siguiente: ( @ . , @. , @h.com, etc).
 Para corregir este fallo es tan simple como cambiar los asteríscos del patrón por signos matemáticos de la suma,
 de manera que el patrón cambiaría a ser algo así |re.search(".+@.+..+", correo)|.
 
-Código del programa 
-    
+Código utilizado para el funcionamiento del programa:
+
+    import re
+
+    acabar=False
+    i=0
+    while(acabar==False):
+        if(i<3):    
+            correo = input(str('Introduzca su direccion de correo electronico:\n'))
+            try:
+                if(re.search(".+@.+..+", correo)!=None):
+                    lista=re.split("@",correo)
+                    print('Acceso completado\n¡Bienvenido '+str(lista[0])+'!')
+                    acabar=True
+                else:
+                    print(1/0)
+            except ZeroDivisionError:
+                print('**ERROR**\n'+str(correo)+'no es una direccion de correo electronico valida.')
+        else:
+            print('**ERROR**\nCuenta bloqueada a causa de un ataque.')
+            acabar=True
+        i=i+1
