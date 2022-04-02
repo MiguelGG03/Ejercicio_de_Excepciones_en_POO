@@ -6,7 +6,7 @@ while(acabar==False):
     if(i<3):    
         correo = input(str('Introduzca su direccion de correo electronico:\n'))
         try:
-            if(re.search(".*@.*..*", correo)!=None):
+            if(re.search(".+@.+..+", correo)!=None):
                 lista=re.split("@",correo)
                 print('Acceso completado\n¡Bienvenido '+str(lista[0])+'!')
                 acabar=True
