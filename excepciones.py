@@ -7,3 +7,5 @@ try:
         print('Acceso completado')
     else:
         print(1/0)
+except ZeroDivisionError:
+    print('**ERROR**\nEso no es una direccion de correo electronico valida')
