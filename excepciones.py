@@ -1,6 +1,5 @@
 import re
 
-
 acabar=False
 i=0
 while(acabar==False):
